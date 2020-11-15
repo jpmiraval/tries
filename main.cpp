@@ -1,6 +1,7 @@
 #include "radixTree.h"
 #include "Try.h"
 #include "TSearch.h"
+#include <chrono>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ pair<string,string> getName(string s){
 }
 
 int main() {
-
+    auto start = std::chrono::steady_clock::now();
     /* TRY
     Trie trie = Trie();
     ifstream file("index.txt");
@@ -34,8 +35,6 @@ int main() {
     }
     trie.search("uml 2 toolkit");
      */
-
-
 
 
     /* MAIN RADIX TREE
@@ -59,7 +58,6 @@ int main() {
      */
 
 
-
     /* TERNARY SEARCH TREE
 
     Ternary_Search_tree tree;
@@ -81,6 +79,10 @@ int main() {
 return 0;
     */
 
+    cout << "\n\n";
+    auto end = std::chrono::steady_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end-start;
+    std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
 
     return 0;
 }
